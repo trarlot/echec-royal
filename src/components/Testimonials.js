@@ -161,7 +161,7 @@ const Testimonials = () => {
                             key={testimonial.id}
                             ref={addToRefs}
                             className={`
-                                relative min-h-[700px] flex flex-col justify-center p-8 md:p-12
+                                relative min-h-[700px] flex flex-col justify-center px-20 md:p-12
                                 transition-transform duration-300 ease-out
                                 ${
                                     testimonial.color === 'brown'
