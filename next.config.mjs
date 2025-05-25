@@ -80,7 +80,7 @@ const nextConfig = {
 
     // Optimisation CSS expérimentale
     experimental: {
-        optimizeCss: true,
+        // optimizeCss: true,  // Commenté temporairement
         optimizePackageImports: ['gsap', 'three'],
     },
 
