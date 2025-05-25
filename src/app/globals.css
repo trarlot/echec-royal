@@ -1,26 +1,173 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Couleurs de base */
+  --color-beige: #fae5d1;
+  --color-brown: #8b481d;
+  --color-white: #ffffff;
+  --color-black: #000000;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Bloquer le scroll par défaut au chargement sans décalage */
+html {
+  scrollbar-gutter: stable;
+  scrollbar-width: none; /* Firefox */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body {
+  overflow: hidden !important;
+  scrollbar-gutter: stable;
+}
+
+/* Styliser la scrollbar pour qu'elle soit transparente */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Classes de polices utilisant les variables CSS de Next.js */
+.font-playfair {
+  font-family: var(--font-playfair), 'Playfair Display', serif;
+}
+
+.font-cormorant {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+}
+
+.font-inter {
+  font-family: var(--font-inter), 'Inter', sans-serif;
+}
+
+/* Thème light */
+[data-theme='light'] {
+  --primary-color: var(--color-brown);
+  --secondary-color: var(--color-beige);
+  --gradient-black-color: linear-gradient(
+    to right,
+    var(--color-black) 0%,
+    var(--color-black) 50%,
+    transparent 50%,
+    transparent 100%
+  );
+  --gradient-white-color: linear-gradient(
+    to right,
+    var(--color-white) 0%,
+    var(--color-white) 50%,
+    transparent 50%,
+    transparent 100%
+  );
+  --text-primary: var(--color-black);
+  --text-secondary: var(--color-white);
+  --background: var(--color-beige);
+  --foreground: var(--color-brown);
+}
+
+/* Thème dark */
+[data-theme='dark'] {
+  --primary-color: var(--color-beige);
+  --secondary-color: var(--color-brown);
+  --gradient-black-color: linear-gradient(
+    to right,
+    var(--color-white) 0%,
+    var(--color-white) 50%,
+    transparent 50%,
+    transparent 100%
+  );
+  --gradient-white-color: linear-gradient(
+    to right,
+    var(--color-black) 0%,
+    var(--color-black) 50%,
+    transparent 50%,
+    transparent 100%
+  );
+  --text-primary: var(--color-white);
+  --text-secondary: var(--color-black);
+  --background: var(--color-brown);
+  --foreground: var(--color-beige);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), 'Inter', sans-serif; /* Police par défaut */
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
+}
+
+span,
+p,
+li {
+  font-family: var(--font-inter), 'Inter', sans-serif;
+}
+
+/* Classes personnalisées pour le système de thème */
+@layer utilities {
+  .bg-theme-background {
+    background-color: var(--background);
+  }
+
+  .bg-theme-primary {
+    background-color: var(--primary-color);
+  }
+
+  .bg-theme-secondary {
+    background-color: var(--secondary-color);
+  }
+
+  .text-theme-primary {
+    color: var(--text-primary);
+  }
+
+  .text-theme-secondary {
+    color: var(--text-secondary);
+  }
+
+  .border-theme-primary {
+    border-color: var(--text-primary);
+  }
+
+  .border-theme-secondary {
+    border-color: var(--text-secondary);
+  }
+
+  /* Classe pour le gradient avec effet de remplissage */
+  .bg-gradient-black {
+    background: var(--gradient-black-color);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    transition: background-position 0.3s ease, color 0.3s ease;
+  }
+  .bg-gradient-white {
+    background: var(--gradient-white-color);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    transition: background-position 0.3s ease, color 0.3s ease;
+  }
+
+  .bg-gradient-black:hover {
+    background-position: 0% 0;
+    color: var(--text-secondary);
+  }
+  .bg-gradient-white:hover {
+    background-position: 0% 0;
+    color: var(--text-primary);
+  }
+
+  /* Classe pour réactiver le scroll sans décalage */
+  .scroll-enabled {
+    overflow-y: auto !important;
+    scrollbar-gutter: stable;
+  }
 }
