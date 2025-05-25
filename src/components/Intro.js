@@ -231,8 +231,8 @@ export default function Intro() {
                     Aux échecs, chaque coup compte — tout comme chaque membre.
                     Nous croyons que le jeu est un excellent moyen de développer
                     la concentration, la patience et la stratégie, tout en
-                    créant du lien social. Chez Échec Royal, l'apprentissage va
-                    de pair avec le plaisir de jouer.
+                    créant du lien social. Chez Échec Royal,
+                    l&apos;apprentissage va de pair avec le plaisir de jouer.
                 </p>
                 <Image
                     src="/images/image-25.jpg"
