@@ -118,129 +118,133 @@ export default function Intro() {
     }, []);
 
     return (
-        <section
-            ref={containerRef}
-            className="relative h-[3000px] max-w-[1600px] mx-auto overflow-hidden bg-theme-background">
+        <section className=" bg-theme-background">
             <div
-                ref={sloganRef}
-                className="absolute top-4 right-8 text-md text-theme-primary">
-                Le club où chaque coup compte.
-            </div>
+                ref={containerRef}
+                className="relative h-[3000px] max-w-[1600px] mx-auto">
+                <div
+                    ref={sloganRef}
+                    className="absolute top-4 right-8 text-md text-theme-primary">
+                    Le club où chaque coup compte.
+                </div>
 
-            <div ref={image1Ref} className="absolute top-8 left-8 ">
-                <Image
-                    src="/images/image-20.jpg"
-                    alt="Chess board"
-                    width={360}
-                    height={528}
-                    className="w-full h-full object-cover "
-                />
-            </div>
+                <div ref={image1Ref} className="absolute top-8 left-8 ">
+                    <Image
+                        src="/images/image-20.jpg"
+                        alt="Chess board"
+                        width={360}
+                        height={528}
+                        className="w-full h-full object-cover "
+                    />
+                </div>
 
-            <div
-                ref={image2Ref}
-                className="absolute top-[500px] max-w-[424px] left-20 flex flex-col gap-5">
-                <Image
-                    src="/images/image-21.jpg"
-                    alt="Chess pieces outdoor"
-                    width={424}
-                    height={588}
-                    className="  object-cover "
-                />
-                <p
-                    ref={descriptionRef}
-                    className="text-md leading-relaxed text-theme-primary">
-                    Fondé sur des passionnés du noble jeu, Échec Royal est plus
-                    qu&apos;un simple club d&apos;échecs. C&apos;est un lieu de
-                    rencontre, d&apos;apprentissage et de compétition, ouvert à
-                    tous - débutants curieux, stratèges assurés, ou simples
-                    amateurs du dimanche. Rejoignez-nous et venez vivre la
-                    passion de l&apos;échiquier, simplement jouer autour
-                    d&apos;un café, notre club vous accueille à bras ouverts.
-                </p>
-            </div>
+                <div
+                    ref={image2Ref}
+                    className="absolute top-[500px] max-w-[424px] left-20 flex flex-col gap-5">
+                    <Image
+                        src="/images/image-21.jpg"
+                        alt="Chess pieces outdoor"
+                        width={424}
+                        height={588}
+                        className="  object-cover "
+                    />
+                    <p
+                        ref={descriptionRef}
+                        className="text-md leading-relaxed text-theme-primary">
+                        Fondé sur des passionnés du noble jeu, Échec Royal est
+                        plus qu&apos;un simple club d&apos;échecs. C&apos;est un
+                        lieu de rencontre, d&apos;apprentissage et de
+                        compétition, ouvert à tous - débutants curieux,
+                        stratèges assurés, ou simples amateurs du dimanche.
+                        Rejoignez-nous et venez vivre la passion de
+                        l&apos;échiquier, simplement jouer autour d&apos;un
+                        café, notre club vous accueille à bras ouverts.
+                    </p>
+                </div>
 
-            <div className="absolute top-[500px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-20">
-                <h2
-                    ref={titleRef}
-                    className="text-6xl font-bold font-serif leading-tight text-theme-primary">
-                    Bienvenue à Échec Royal
-                </h2>
-            </div>
+                <div className="absolute top-[500px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-20">
+                    <h2
+                        ref={titleRef}
+                        className="text-6xl font-bold font-serif leading-tight text-theme-primary">
+                        Bienvenue à Échec Royal
+                    </h2>
+                </div>
 
-            <div ref={image3Ref} className="absolute top-[300px] right-16 ">
-                <Image
-                    src="/images/image-22.jpg"
-                    alt="Chess pieces"
-                    width={332}
-                    height={560}
-                    className=" object-cover "
-                />
-            </div>
+                <div ref={image3Ref} className="absolute top-[300px] right-16 ">
+                    <Image
+                        src="/images/image-22.jpg"
+                        alt="Chess pieces"
+                        width={332}
+                        height={560}
+                        className=" object-cover "
+                    />
+                </div>
 
-            <div ref={image4Ref} className="absolute top-[1200px] right-8 ">
-                <Image
-                    src="/images/image-23.jpg"
-                    alt="Chess set"
-                    width={160}
-                    height={308}
-                    className=" object-cover"
-                />
-            </div>
+                <div ref={image4Ref} className="absolute top-[1200px] right-8 ">
+                    <Image
+                        src="/images/image-23.jpg"
+                        alt="Chess set"
+                        width={160}
+                        height={308}
+                        className=" object-cover"
+                    />
+                </div>
 
-            <div
-                ref={image5Ref}
-                className="absolute z-20 top-[1600px] left-1/2 -translate-x-1/2   ">
-                <Image
-                    src="/images/image-26.jpg"
-                    alt="Outdoor chess game"
-                    width={584}
-                    height={456}
-                    className=" object-cover "
-                />
-            </div>
-            <div
-                ref={textRef}
-                className="absolute bottom-[1000px] z-10 left-0 w-full flex flex-col items-center justify-center">
-                <h2 className="text-2xl font-bold uppercase font-serif leading-tight text-theme-primary">
-                    Notre philosophie
-                </h2>
-            </div>
+                <div
+                    ref={image5Ref}
+                    className="absolute z-20 top-[1600px] left-1/2 -translate-x-1/2   ">
+                    <Image
+                        src="/images/image-26.jpg"
+                        alt="Outdoor chess game"
+                        width={584}
+                        height={456}
+                        className=" object-cover "
+                    />
+                </div>
+                <div
+                    ref={textRef}
+                    className="absolute bottom-[1000px] z-10 left-0 w-full flex flex-col items-center justify-center">
+                    <h2 className="text-2xl font-bold uppercase font-serif leading-tight text-theme-primary">
+                        Notre philosophie
+                    </h2>
+                </div>
 
-            <div
-                ref={image6Ref}
-                className="absolute flex flex-col gap-50 top-[2200px] z-10 left-[100px] ">
-                <Image
-                    src="/images/image-24.jpg"
-                    alt="Outdoor chess game"
-                    width={500}
-                    height={400}
-                    className=" object-cover "
-                />
-                <button className="flex  cursor-pointer items-center bg-gradient-black justify-center gap-2 px-6 py-3 border transition w-1/2 border-theme-primary text-theme-primary">
-                    <span>Rejoindre le club</span>
-                    <span>→</span>
-                </button>
-            </div>
-            <div
-                ref={image7Ref}
-                className="absolute top-[2700px] flex flex-col gap-6 z-10 right-[200px] max-w-[400px]  ">
-                <p
-                    ref={philosophyTextRef}
-                    className="text-md leading-relaxed text-theme-primary">
-                    Aux échecs, chaque coup compte — tout comme chaque membre.
-                    Nous croyons que le jeu est un excellent moyen de développer
-                    la concentration, la patience et la stratégie, tout en
-                    créant du lien social. Chez Échec Royal,
-                    l&apos;apprentissage va de pair avec le plaisir de jouer.
-                </p>
-                <Image
-                    src="/images/image-25.jpg"
-                    alt="Outdoor chess game"
-                    width={500}
-                    height={350}
-                    className=" object-cover "
-                />
+                <div
+                    ref={image6Ref}
+                    className="absolute flex flex-col gap-50 top-[2200px] z-10 left-[100px] ">
+                    <Image
+                        src="/images/image-24.jpg"
+                        alt="Outdoor chess game"
+                        width={500}
+                        height={400}
+                        className=" object-cover "
+                    />
+                    <button className="flex  cursor-pointer items-center bg-gradient-black justify-center gap-2 px-6 py-3 border transition w-1/2 border-theme-primary text-theme-primary">
+                        <span>Rejoindre le club</span>
+                        <span>→</span>
+                    </button>
+                </div>
+                <div
+                    ref={image7Ref}
+                    className="absolute top-[2700px] flex flex-col gap-6 z-10 right-[200px] max-w-[400px]  ">
+                    <p
+                        ref={philosophyTextRef}
+                        className="text-md leading-relaxed text-theme-primary">
+                        Aux échecs, chaque coup compte — tout comme chaque
+                        membre. Nous croyons que le jeu est un excellent moyen
+                        de développer la concentration, la patience et la
+                        stratégie, tout en créant du lien social. Chez Échec
+                        Royal, l&apos;apprentissage va de pair avec le plaisir
+                        de jouer.
+                    </p>
+                    <Image
+                        src="/images/image-25.jpg"
+                        alt="Outdoor chess game"
+                        width={500}
+                        height={350}
+                        className=" object-cover "
+                    />
+                </div>
             </div>
         </section>
     );

@@ -87,27 +87,33 @@ const TournamentSection = ({
     };
 
     return (
-        <section
-            ref={containerRef}
-            className="relative py-24 max-w-[1500px] mx-auto px-8 bg-theme-background">
-            <div className="text-center mb-20">
-                <h2
-                    ref={titleRef}
-                    className="text-6xl md:text-7xl font-playfair text-theme-primary mb-4">
-                    {title}
-                </h2>
-            </div>
+        <section className=" py-24  px-8 bg-theme-background">
+            <div
+                ref={containerRef}
+                className=" relative  max-w-[1500px] mx-auto">
+                <div className="text-center mb-20">
+                    <h2
+                        ref={titleRef}
+                        className="text-6xl md:text-7xl font-playfair text-theme-primary mb-4">
+                        {title}
+                    </h2>
+                </div>
 
-            <div className="border-l border-t border-black">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                    {tournaments.map((tournament, index) => (
-                        <div
-                            key={tournament.id}
-                            ref={addToRefs}
-                            className={`
+                <div className="border-t border-black">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                        {tournaments.map((tournament, index) => (
+                            <div
+                                key={tournament.id}
+                                ref={addToRefs}
+                                className={`
                                 relative p-4 min-h-[365px] flex flex-col justify-between
                                 transition-transform duration-300 ease-out cursor-pointer group
                                 border-r border-b border-black
+                                ${
+                                    index % 4 === 0
+                                        ? 'border-l border-black'
+                                        : ''
+                                }
                                 ${
                                     tournament.color === 'brown'
                                         ? 'bg-theme-primary text-theme-secondary'
@@ -115,35 +121,37 @@ const TournamentSection = ({
                                 }
                                 ${isResultsSection ? 'opacity-80' : ''}
                             `}>
-                            <div className="flex flex-row justify-between mb-4">
-                                <h3
-                                    className={`text-4xl max-w-1/2 font-playfair leading-8 ${
-                                        isResultsSection ? 'opacity-50' : ''
-                                    }`}>
-                                    {tournament.name}
-                                </h3>
-                                <span
-                                    className={`text-base font-playfair ${
-                                        isResultsSection
-                                            ? 'line-through opacity-50'
-                                            : ''
-                                    }`}>
-                                    {tournament.dates}
-                                </span>
-                            </div>
-
-                            <div className="space-y-4">
-                                <div className="text-left">
-                                    <span
-                                        className={`text-sm font-medium  ${
+                                <div className="flex flex-row justify-between mb-4">
+                                    <h3
+                                        className={`text-4xl max-w-1/2 font-playfair leading-8 ${
                                             isResultsSection ? 'opacity-50' : ''
                                         }`}>
-                                        {tournament.type}
+                                        {tournament.name}
+                                    </h3>
+                                    <span
+                                        className={`text-base font-playfair ${
+                                            isResultsSection
+                                                ? 'line-through opacity-50'
+                                                : ''
+                                        }`}>
+                                        {tournament.dates}
                                     </span>
                                 </div>
 
-                                <button
-                                    className={`flex cursor-pointer text-sm items-center justify-center gap-2 px-3 mx-auto py-2 border transition    
+                                <div className="space-y-4">
+                                    <div className="text-left">
+                                        <span
+                                            className={`text-sm font-medium  ${
+                                                isResultsSection
+                                                    ? 'opacity-50'
+                                                    : ''
+                                            }`}>
+                                            {tournament.type}
+                                        </span>
+                                    </div>
+
+                                    <button
+                                        className={`flex cursor-pointer text-sm items-center justify-center gap-2 px-3 mx-auto py-2 border transition    
                                         ${
                                             tournament.color === 'brown'
                                                 ? 'bg-gradient-white border-theme-secondary text-theme-secondary'
@@ -151,12 +159,13 @@ const TournamentSection = ({
                                         }
                                         
                                     `}>
-                                    <span>{buttonText}</span>
-                                    <span>→</span>
-                                </button>
+                                        <span>{buttonText}</span>
+                                        <span>→</span>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

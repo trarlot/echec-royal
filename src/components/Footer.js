@@ -32,7 +32,6 @@ const Footer = () => {
                 start: 'top top',
                 end: 'bottom 99%',
                 scrub: true,
-                markers: true,
             },
         });
 
@@ -53,7 +52,7 @@ const Footer = () => {
                         alt="King"
                         width={533}
                         height={1200}
-                        className="object-cover w-[40vh]   z-10  h-auto"
+                        className="object-cover w-[40vh] z-10  h-auto"
                     />
                 </div>
 
@@ -113,26 +112,24 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-
-                <div
-                    ref={boardRef}
-                    className="w-full h-[50vh] mx-auto grid grid-cols-8 gap-0 ">
-                    {[...Array(64)].map((_, index) => {
-                        const row = Math.floor(index / 8);
-                        const col = index % 8;
-                        const isLight = (row + col) % 2 === 0;
-
-                        return (
-                            <div
-                                key={index}
-                                className={`${
-                                    isLight ? 'bg-brown' : 'bg-beige'
-                                }`}
-                            />
-                        );
-                    })}
-                </div>
+                <div className="bg-transparent h-[50vh]"></div>
             </footer>
+            <div
+                ref={boardRef}
+                className="w-full h-[50vh] mx-auto grid grid-cols-8 gap-0 fixed bottom-0 -z-10">
+                {[...Array(64)].map((_, index) => {
+                    const row = Math.floor(index / 8);
+                    const col = index % 8;
+                    const isLight = (row + col) % 2 === 0;
+
+                    return (
+                        <div
+                            key={index}
+                            className={`${isLight ? 'bg-brown' : 'bg-beige'}`}
+                        />
+                    );
+                })}
+            </div>
         </>
     );
 };

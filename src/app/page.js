@@ -22,7 +22,7 @@ export default function Home() {
     return (
         <>
             {showPreloader && <SideChooser onSideChosen={handleSideChosen} />}
-            <div>
+            <div className="relative">
                 <Hero />
                 <Intro />
                 <Events />
