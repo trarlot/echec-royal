@@ -8,6 +8,7 @@ import SideChooser from '@/components/SideChooser';
 import Intro from '@/components/Intro';
 import Events from '@/components/Events';
 import Testimonials from '@/components/Testimonials';
+import Footer from '@/components/Footer';
 
 export default function Home() {
     const [showPreloader, setShowPreloader] = useState(true);
@@ -21,11 +22,12 @@ export default function Home() {
     return (
         <>
             {showPreloader && <SideChooser onSideChosen={handleSideChosen} />}
-            <div className="min-h-screen bg-theme-background">
+            <div>
                 <Hero />
                 <Intro />
                 <Events />
                 <Testimonials />
+                <Footer />
             </div>
         </>
     );
